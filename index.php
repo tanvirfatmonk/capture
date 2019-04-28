@@ -67,6 +67,18 @@ $(this).addClass("active");
        el.style.display='block';
      }
     }
+    function divclose(){
+      var img = document.getElementById('myImg').src;
+      var bi = document.getElementById('browseimage');
+      var d1 = document.getElementById('div1');
+      var d2 = document.getElementById('div2');
+      if(img!=''){
+        d1.style.display='block';
+        d2.style.display='block';
+        bi.style.display='none';
+      }
+
+    }
 </script>
 </head>
 
@@ -107,28 +119,26 @@ $(this).addClass("active");
         <div class="section-header">
           <h2>How to use</h2>
         </div>
-        <div class="col-lg-12 text-center">
-        <div class="form-row">
+        <div class="form-row col-lg-12 text-center">
             <div class="form-group col-lg-4 col-md-4">
               <div class="help">
-                <h3><a href="">STEP ONE</a></h3>
-                <p id="kl">Select Image Options</p>
+                <h3><a href="">STEP ONE</a></h3></br>
+                <label>Select Image Options</label>
               </div>
             </div>
             <div class="form-group col-lg-4 col-md-4">
               <div class="help">
-                <h3><a href="">STEP Two</a></h3>
-                <p>Upload your image</p>
+                <h3><a href="">STEP Two</a></h3></br>
+                <label>Upload your image</label>
               </div>
             </div>
             <div class="form-group col-lg-4 col-md-4">
               <div class="help">
-                <h3><a href="">STEP Three</a></h3>
-                <p>Give us your feedback</p>
+                <h3><a href="">STEP Three</a></h3></br>
+                <label>Give us your feedback</label>
               </div>
             </div>
       </div>
-    </div>
     </section>
     <hr>
     <section id="contact" class="section-bg wow fadeInUp">
@@ -165,7 +175,8 @@ $(this).addClass("active");
                   </div>
                 </div>
                 </div>
-                <div class="form-group col-lg-10" name="custom" id="custom" align="center"  Style="display:none;">
+
+                <div class="form-group col-lg-12 pull-right" name="custom" id="custom" Style="display:none;">
                 <div class="form-group row">
                   <label class="col-lg-3 col-form-label">Height :</label>
                   <div class="col-lg-4">
@@ -193,38 +204,33 @@ $(this).addClass("active");
     </section><!-- #contact -->
     <hr>
     <section id="uploadsec" class="section-with-bg wow fadeInUp">
-      <div class="container" id="app">
+      <div class="container col-lg-8 text-center" id="app">
         <div class="section-header">
           <h2>Upload Image</h2>
-          <p></p>
         </div>
-        <div class="text-center">
-        <label class="uploadbtn"><i class="fa fa-cloud-upload"></i>
-            Browse&hellip;<input id="upload" type="file" style="display: none;">
-        </label>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 text-center">
-            <div id="myImg" >
-            </div>
-            <h3>Upload your image</h3>
-            <button class="btn btn-success upload-result uploadbtn" @click="force"><i class="fa fa-upload"></i>Upload Image</button>
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <div id="browseimage">
+            <label for="file-input" class="preview">
+              <img src="img/uploadphoto-01.jpg" id="upload" height="300px" width="300px"/>
+            </label>
+            <input id="file-input" type="file" onchange="divclose()" style="display:none;"/>
           </div>
-          <div class="col-lg-6 col-md-6 text-center ">
+
+          </div>
+
+          <div id="div1" class="form-group col-lg-6"  style="display:none;">
+            <div class="preview" id="myImg">
+            </div>
+                <button class="btn btn-success upload-result uploadbtn" @click="force"><i class="fa fa-upload"></i>Upload Image</button>
+          </div>
+
+          <div id="div2" class="form-group col-lg-6" style="display:none;">
               <div id="cropme" class="preview text-center"></div>
                 <img id="cropme-result">
-              <h3 style="margin-top:45px;">Preview</h3>
+              <h3>Preview</h3>
               <button class="uploadbtn"><i class="fa fa-envelope"></i>Send Mail</button>
           </div>
-      </div>
-
-
-
-              <!--
-
-
-              -->
-
       </div>
     </section>
 

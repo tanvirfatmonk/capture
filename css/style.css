@@ -572,12 +572,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-#about p {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #fff;
-}
-
 
 /*--------------------------------------------------------------
 #  Section
@@ -585,6 +579,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #uploadsec {
   padding: 60px 0;
+  background: url(../img/secondbackground.png) top center;
+  background-repeat: no-repeat;
+  background-size: 100% 600px, cover;
 }
 
 #uploadsec .hotel {
@@ -958,6 +955,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 #uploadsec .uploadbtn:hover {
   background: #f82249;
   color: #FFFFFF;
+}
+
+.preview {
+    height: 320px;
+    width:320px;
+    display: inline-block;
+    padding: 10px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    background: #FFFFFF;
+    color: #f82249;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 2px solid #f82249;
+    cursor: grab ;
+    position: relative;
+    overflow: hidden;
+
 }
 
 #countryicon{
